@@ -1,7 +1,7 @@
 # CSV Reader and Analyzer Football Matches with TypeScript and Node.js
 
-![TypeScript](https://img.shields.io/badge/TypeScript-<no_version>-blue?logo=typescript)
-![Node.js](https://img.shields.io/badge/Node.js-<no_version>-green?logo=node.js)
+![TypeScript](https://img.shields.io/badge/?logo=typescript)
+![Node.js](https://img.shields.io/badge/?logo=node.js)
 
 ## Overview
 
