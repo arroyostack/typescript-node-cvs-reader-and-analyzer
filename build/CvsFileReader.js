@@ -12,24 +12,25 @@ class CvsFileReader {
         this.data = [];
     }
     read() {
-        const footballMatches = fs_1.default.readFileSync(this.fileName, {
+        this.data = fs_1.default.readFileSync(this.fileName, {
             encoding: 'utf-8'
-        });
-        const parsedFootballMatches = footballMatches.split('\n').map((row) => {
+        }).split('\n')
+            .map((row) => {
             return row.split(",");
             // We end up with an array of arrays where each element looks like ==>  [ '28/10/2018', 'Burnley', 'Chelsea', '0', '4', 'A', 'C Pawson' ],
-        });
-        const dataConversion = parsedFootballMatches.map((row) => {
+        })
+            .map((row) => {
+            // We end up with all data parsed to more adecated data to work with in Typescript.
             return [
                 (0, utils_1.dateStringToDate)(row[0]),
                 row[1],
                 row[2],
                 parseInt(row[3]),
                 parseInt(row[4]),
-                row[5]
+                row[5],
+                row[6]
             ];
         });
-        return dataConversion;
     }
 }
 exports.CvsFileReader = CvsFileReader;
