@@ -1,7 +1,10 @@
 # CSV Reader and Analyzer Football Matches with TypeScript and Node.js
 
-![TypeScript](https://img.shields.io/badge/?logo=typescript)
-![Node.js](https://img.shields.io/badge/?logo=node.js)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.16.0-green?logo=node.js)](https://nodejs.org/)
+[![@types/node](https://img.shields.io/badge/@types%2Fnode-20.10.4-blue)](https://www.npmjs.com/package/@types/node/v/20.10.4)
+[![concurrently](https://img.shields.io/badge/concurrently-8.2.2-blue)](https://www.npmjs.com/package/concurrently/v/8.2.2)
+[![nodemon](https://img.shields.io/badge/nodemon-3.0.2-blue)](https://www.npmjs.com/package/nodemon/v/3.0.2)
 
 ## Overview
 
