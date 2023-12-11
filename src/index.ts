@@ -1,15 +1,20 @@
 import fs from 'fs';
 import { CvsFileReader } from './CvsFileReader';
 import { MatchResult } from './MatchResult';
+import { MatchReader } from './MatchReader';
 
-const reader = new CvsFileReader( 'football.csv' );
-reader.read();
 
-const dateOfFirstMatch = reader.data[0][0];
+//1. & Create an object that satisfies the 'DataReader' interface.
+const csvFileReader = new CvsFileReader( 'football.csv' );
+
+// 2. Create an instance of 'MatchReader' and pass it something satifying
+// the data reader
+const matchReader = new MatchReader( csvFileReader );
+matchReader.load();
 
 let manUnitedWins: number = 0;
 
-for ( let match of reader.data ) {
+for ( let match of matchReader.matches ) {
     if ( match[1] === 'Man United' && match[5] === MatchResult.HomeWin ) {
         manUnitedWins++;
     } else if ( match[2] === MatchResult.AwayWin ) {
@@ -17,5 +22,5 @@ for ( let match of reader.data ) {
     }
 }
 
-// console.log( reader.read() );
-console.log( dateOfFirstMatch, 'aqui!!!' );
+console.log( matchReader.matches );
+

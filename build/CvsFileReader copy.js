@@ -5,8 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CvsFileReader = void 0;
 const fs_1 = __importDefault(require("fs"));
-//* We are returning a new arrays with a very specific structure */
-//* To type this acordingly we can use a Typescript Tuple  */
+//* This is the first refactor of CDVFileReader class. */
 class CvsFileReader {
     constructor(fileName) {
         this.fileName = fileName;
@@ -18,9 +17,10 @@ class CvsFileReader {
         }).split('\n')
             .map((row) => {
             return row.split(",");
-            /* We end up with an array of arrays where each element looks like ==>
-             [ '28/10/2018', 'Burnley', 'Chelsea', '0', '4', 'A', 'C Pawson' ], */
-        });
+            /*  We end up with an array of arrays where each element looks like ==>
+              [ '28/10/2018', 'Burnley', 'Chelsea', '0', '4', 'A', 'C Pawson' ], */
+        })
+            .map(this.mapRow);
     }
 }
 exports.CvsFileReader = CvsFileReader;
